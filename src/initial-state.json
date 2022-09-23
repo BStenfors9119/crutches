@@ -1,5 +1,9 @@
 {
   "env": "dev",
   "baseVals": null,
-  "openDrawer": false
+  "openDrawer": false,
+  "clientSelected": null,
+  "transactionsApiUrl": null,
+  "batches": null,
+  "batchApiUrl": "http://localhost:3333/api/"
 }

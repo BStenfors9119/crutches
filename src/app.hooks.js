@@ -1,7 +1,9 @@
 import Store from './store';
+// import {useNavigate} from "react-router-dom";
 
 export function useApp() {
-    const [{openDrawer}, setState] = Store.useStore();
+    const [{openDrawer, clientSelected}, setState] = Store.useStore();
+    // let history = useNavigate()
 
     const showDrawer = () => {
         let shouldOpenDrawer = !openDrawer;
@@ -15,10 +17,21 @@ export function useApp() {
         })
     }
 
+    const onClientSelected = (name) => {
+        setState(draft => {
+            draft.clientSelected = name;
+        })
+
+        // if (history !== undefined) {
+        //     history.push("/client")
+        // }
+    }
+
 
     return {
         openDrawer,
-        showDrawer
+        showDrawer,
+        onClientSelected
     }
 
 }
